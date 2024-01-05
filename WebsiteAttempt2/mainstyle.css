@@ -1,0 +1,215 @@
+/*  
+* NWTF Website
+*
+* Home Webpage
+*
+* Authors: Ryan Griffin and Eric Edwards
+*
+* Date: 11/19/2021
+*/
+
+/* Gets rid of browser whitespace */
+* {
+    margin: 0;
+}
+
+/* Sets the background and font on every page. Also specifies overflow which is different for Index. */
+body {
+    background-image: url("Images/background.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	font-family: 'Trebuchet MS';
+	overflow: hidden;
+}
+
+/* CSS for the nav. Orders the images and links while giving the header a background color with blur. The sizing is all fairly rickity so be cautious when changing numbers. Nav also includes a text color overlay for when you hover over the links */
+nav {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	background-color: rgba(0, 0, 0,.85);
+	backdrop-filter: blur(10px);
+}
+
+nav > a {
+	margin: 20px;
+}
+
+nav > a img {
+	height: 8vw;
+}
+
+nav div {
+	display: flex;
+	text-align: center;
+	margin: 20px auto 20px auto;
+}
+
+/* CSS for the JS button. It will only appear for tablet and mobile sized screens. It has a bit of jank to it, but the website is still useable and most people won't notice the sizing issues that come associated with it. Currently trying to fix it, but once again, still functional. */
+button {
+	display: none;
+	width: 50px;
+	height: 50px;
+	margin: 10px;
+	border-radius: 10px;
+	border: none;
+	background-color: black;
+	background-image: url("buttons/hamburger.png");
+	background-size: 100%;
+	box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.3);
+}
+
+nav div a {
+	font-size: 2vw;
+	padding: 20px;
+	text-decoration: none;
+	color: white;
+}
+
+nav div a:hover {
+	text-decoration: none;
+	color: #c58125;
+}
+
+body > div {
+	display: none;
+	align-items: center;
+	margin: auto;
+	margin: 10px 10px 10px auto;
+}
+
+body > div h1 {
+	font-size: 22px;
+}
+
+body > div a {
+	margin-left: 10px;
+}
+
+body > div a img {
+	height: 50px;
+	width: 50px;
+}
+
+/* sets all Iframes to have a border of 0 */
+iframe {
+	border: 0;
+}
+
+/* Sets the footer alignment, background, bluring and text. Also sets height which is required as it stops issues with whitespace from occuring. Also includes the facebook image. */
+Footer {
+    display: flex;
+    justify-content: center;
+	align-items: center;
+	height: auto;
+	background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+	color: white;
+}
+
+footer a img {
+    height: 60px;
+    margin-left: 15px;
+}
+
+/* Sets the scrollbar styling. */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: lightgray;
+    border-radius: 999px;
+}
+  
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+/* sizes the screen for tablets and more narrow monitor screens. */
+@media only screen and (max-width: 1400px) {
+	body {
+		overflow-y: visible;
+	}
+
+	main {
+		min-height: 76vh;
+	}
+}
+
+/* Sizes the screen for phones */
+@media only screen and (max-width: 900px) {
+	body {
+		display: flex;
+		flex-direction: column;
+	}
+
+	body > div {
+		display: flex;
+	}
+
+	nav {
+		position: fixed;
+		top: 0;
+		z-index: 1;
+		width: auto;
+		background: none;
+		backdrop-filter: blur(0px);
+	}
+
+	nav > a {
+		display: none;
+	}
+
+	button {
+		display: flex;
+	}
+
+	nav div {
+		position: fixed;
+		top: 0;
+		flex-direction: column;
+		background-color: rgba(0, 0, 0, 0.95);
+		margin: 70px 10px 10px 10px;
+		border-radius: 10px;
+		text-align: left;
+		overflow: hidden;
+		transition: max-height 0.3s;
+		max-height: 0px;
+	}
+
+	nav div a {
+		font-size: 28px;
+	}
+	
+
+	.open div {
+		max-height: 432px;
+		box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.3);
+	}
+
+	.open button {
+		background-image: url("buttons/close.png");
+	}
+
+	body h1 {
+		display: flex;
+	}
+
+	main {
+		margin-top: 0px;
+	}
+
+	footer {
+		flex-direction: column;
+		text-align: center;
+		padding: 30px 20px 20px 20px;
+	}
+
+	footer a img {
+		margin-top: 10px;
+	}
+}
